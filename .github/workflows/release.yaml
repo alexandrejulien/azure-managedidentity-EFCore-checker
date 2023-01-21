@@ -58,13 +58,10 @@ jobs:
         name: AzureManagedIdentityEFCoreTester.EF7-winx64
         path: app/EF7/Win-x64
     - name: Tag and Release
-      uses: jasondavis303/tag-and-release-and-upload@v1.2.0
+      uses: dothq/tag-and-release-and-upload@v1.2.0
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          
-          # Use the version from the previous step
           version: v1.0.0
-          
           assets: '[ "app/EF6/Portable", "app/EF7/Portable" ]'
           overwrite: true   
 
