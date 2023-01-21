@@ -15,32 +15,46 @@ jobs:
       run: dotnet restore
     - name: Build Portable
       run: dotnet build --no-restore --configuration Release
-    - name: Publish EF6 Portable
+    - name: Publish EF6 EF6 Portable
       run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj  -o app/EF6/Portable
+    - name: Publish EF6 Win x86
+      run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true -o app/EF6/Win-x86
+    - name: Publish EF6 Win x64
+      run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true  -o app/EF6/Win-x64
     - name: Publish EF7 Portable
       run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF7/AzureManagedIdentityEFCoreTester.EF7.csproj  -o app/EF7/Portable
-    # - name: Publish Win x86
-    #   run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true -o app/Win-x86
-    # - name: Publish Win x64
-    #   run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true  -o app/Win-x64
+    - name: Publish EF7 Win x86
+      run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF7/AzureManagedIdentityEFCoreTester.EF7.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true -o app/EF7/Win-x86
+    - name: Publish EF7 Win x64
+      run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF7/AzureManagedIdentityEFCoreTester.EF7.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true  -o app/EF7/Win-x64
     - name: Upload a Build Artifact Portable
       uses: actions/upload-artifact@v3.1.0
       with:
         name: AzureManagedIdentityEFCoreTester.EF6
         path: app/EF6/Portable
+    - name: Upload a Build Artifact Win-x86
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-win-x86
+        path: app/EF6/Win-x86
+    - name: Upload a Build Artifact Win-x64
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-winx64
+        path: app/EF6/Win-x64
     - name: Upload a Build Artifact Portable
       uses: actions/upload-artifact@v3.1.0
       with:
         name: AzureManagedIdentityEFCoreTester.EF7
         path: app/EF7/Portable
-    # - name: Upload a Build Artifact Win-x86
-    #   uses: actions/upload-artifact@v3.1.0
-    #   with:
-    #     name: Peppermint.ReverseProxy-win-x86
-    #     path: app/Win-x86
-    # - name: Upload a Build Artifact Win-x64
-    #   uses: actions/upload-artifact@v3.1.0
-    #   with:
-    #     name: Peppermint.ReverseProxy-winx64
-    #     path: app/Win-x64
+    - name: Upload a Build Artifact Win-x86
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-win-x86
+        path: app/EF7/Win-x86
+    - name: Upload a Build Artifact Win-x64
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-winx64
+        path: app/EF7/Win-x64
 
