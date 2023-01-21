@@ -18,7 +18,7 @@ jobs:
     - name: Publish EF6 Portable
       run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj  -o app/EF6/Portable
     - name: Publish EF7 Portable
-      run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF7.csproj  -o app/EF7/Portable
+      run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF7/AzureManagedIdentityEFCoreTester.EF7.csproj  -o app/EF7/Portable
     # - name: Publish Win x86
     #   run: dotnet publish src/AzureManagedIdentityEFCoreTester.EF6/AzureManagedIdentityEFCoreTester.EF6.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true -o app/Win-x86
     # - name: Publish Win x64
