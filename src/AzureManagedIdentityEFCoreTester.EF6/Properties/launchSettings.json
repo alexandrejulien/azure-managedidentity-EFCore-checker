@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AzureManagedIdentityEFCoreTester": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Server=(localdb)\\\\mssqllocaldb;Database=mydb;Trusted_Connection=True;\""
+    }
+  }
+}

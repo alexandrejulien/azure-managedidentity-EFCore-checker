@@ -1,0 +1,42 @@
+name: Release-CI
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build Portable
+      run: dotnet build --no-restore --configuration Release
+    - name: Publish Portable
+      run: dotnet publish src/Peppermint.ReverseProxy/Peppermint.ReverseProxy.csproj  -o app/Portable
+    - name: Publish Win x86
+      run: dotnet publish src/Peppermint.ReverseProxy/Peppermint.ReverseProxy.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true -o app/Win-x86
+    - name: Publish Win x64
+      run: dotnet publish src/Peppermint.ReverseProxy/Peppermint.ReverseProxy.csproj --runtime win-x86 --self-contained false -p:PublishReadyToRun=true p:PublishSingleFile true  -o app/Win-x64   
+    - name: Publish Linux
+    - name: Upload a Build Artifact Portable
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-portable-dotnet
+        path: app/Portable
+    - name: Upload a Build Artifact Win-x86
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-win-x86
+        path: app/Win-x86
+    - name: Upload a Build Artifact Win-x64
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: Peppermint.ReverseProxy-winx64
+        path: app/Win-x64
+

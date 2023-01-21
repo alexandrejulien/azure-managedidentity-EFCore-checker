@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureManagedIdentityEFCoreTester.EF6", "src\AzureManagedIdentityEFCoreTester.EF6\AzureManagedIdentityEFCoreTester.EF6.csproj", "{1FFD9166-7294-4A2A-A7AF-E6042A86D294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureManagedIdentityEFCoreTester.EF7", "src\AzureManagedIdentityEFCoreTester.EF7\AzureManagedIdentityEFCoreTester.EF7.csproj", "{81F50C42-A437-41B1-9D84-01689F343420}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FFD9166-7294-4A2A-A7AF-E6042A86D294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFD9166-7294-4A2A-A7AF-E6042A86D294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFD9166-7294-4A2A-A7AF-E6042A86D294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFD9166-7294-4A2A-A7AF-E6042A86D294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F50C42-A437-41B1-9D84-01689F343420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F50C42-A437-41B1-9D84-01689F343420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F50C42-A437-41B1-9D84-01689F343420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F50C42-A437-41B1-9D84-01689F343420}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92BF1643-9983-4DAC-B0FC-3F98101C73A4}
+	EndGlobalSection
+EndGlobal
