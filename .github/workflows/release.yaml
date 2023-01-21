@@ -35,12 +35,12 @@ jobs:
     - name: Upload a Build Artifact Win-x86
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: Peppermint.ReverseProxy-win-x86
+        name: AzureManagedIdentityEFCoreTester.EF6-win-x86
         path: app/EF6/Win-x86
     - name: Upload a Build Artifact Win-x64
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: Peppermint.ReverseProxy-winx64
+        name: AzureManagedIdentityEFCoreTester.EF6-winx64
         path: app/EF6/Win-x64
     - name: Upload a Build Artifact Portable
       uses: actions/upload-artifact@v3.1.0
@@ -50,11 +50,11 @@ jobs:
     - name: Upload a Build Artifact Win-x86
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: Peppermint.ReverseProxy-win-x86
+        name: AzureManagedIdentityEFCoreTester.EF7-win-x86
         path: app/EF7/Win-x86
     - name: Upload a Build Artifact Win-x64
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: Peppermint.ReverseProxy-winx64
+        name: AzureManagedIdentityEFCoreTester.EF7-winx64
         path: app/EF7/Win-x64
 
