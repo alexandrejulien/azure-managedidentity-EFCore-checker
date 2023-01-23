@@ -23,7 +23,7 @@ namespace AzureManagedIdentityEFCoreTester.EF6.Data
         {
             using (var dbContext = new ApplicationDbContext(connectionString))
             {
-                var result = dbContext.Database.ExecuteSqlRaw("SELECT 1=1");
+                var result = dbContext.Database.ExecuteSqlRaw("SELECT 1");
                 Console.WriteLine("Result: " + result);
             }
         }
