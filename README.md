@@ -9,7 +9,5 @@ On EF6, the connectionstring works very well but with EF7 and the SQL Client dep
 ```powershell
 AzureManagedIdentityEFCoreTester.EF6 "Server=tcp:<hostname>,<port>;Initial Catalog=mydb;Authentication=Active Directory Managed Identity;User ID=<principal-id>;MultipleActiveResultSets=True;Encrypt=True;Connection Timeout=300;"
 
-AzureManagedIdentityEFCoreTester.EF7 "Server=tcp:<hostname>,<port>;Initial Catalog=mydb;Authentication=Active Directory Managed Identity;User ID=<principal-id>;MultipleActiveResultSets=True;Encrypt=True;Connection Timeout=300;"
+AzureManagedIdentityEFCoreTester.EF7 "Server=tcp:<hostname>,<port>;Initial Catalog=mydb;Authentication=Active Directory MSI;User ID=<client-id>;MultipleActiveResultSets=True;Encrypt=True;Connection Timeout=300;"
 ```
-
-The request works well with EF6 and it's raise a 400 HTTP Code error with EF7.
